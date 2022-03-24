@@ -627,6 +627,11 @@ jQuery.fn.flexdatalist = function (_option, _value) {
                     result = _this.fvalue._extract(values);
                 }
 
+                if (init) {
+                    $this
+                        .trigger('change:flexdatalist_init', [result, options]);
+                }
+                
                 if (!init) {
                     $this
                         .data('result_selected', values)
